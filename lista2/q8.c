@@ -4,6 +4,7 @@ int main() {
     int m[100][100];
     int k, x, l, h; // largura da borda e o por último o valor da borda
     int i, j, r;
+    int topo = 0, esq = 0, base = l - 1, dir = c - 1;
 
     scanf("%d %d %d %d", &l, &h, &k, &x);
 

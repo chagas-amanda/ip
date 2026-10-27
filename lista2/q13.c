@@ -1,5 +1,5 @@
 // imprimir na ordem lida
-#include <stdio.h>
+/*#include <stdio.h>
 #define N 5
 
 int main() {
@@ -1580,6 +1580,30 @@ int main() {
         printf("%s\n", teste);
         printf("Espacos: %d\n", espacoT);
         printf("Palavras: %d\n", numero);
+    }
+
+    return 0;
+}*/
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    int i, j;
+    int cont = 1;
+
+    scanf("%d %d", &a, &b);
+
+    for (i = 0; i < a; i++) {
+        for (j = 0; j < b; j++) {
+            if ((i + j) % 2 == 0) {
+                printf("0 ");
+            }
+            else {
+                printf("%d ", cont);
+                cont++;
+            }
+        }
+        printf("\n");
     }
 
     return 0;

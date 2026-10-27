@@ -12,11 +12,8 @@ int meu_strlen(char *str) {
 
 int main() {
     char txt[10001];
-    int i = 0;
     int j;
-    scanf(" %s", txt);
-
-    while (txt[i] != '\0') {
+    while (fgets(txt, sizeof(txt), stdin) != NULL) {
         int count1 = 1;
         int count2 = 0;
         int l = meu_strlen(txt);
@@ -28,7 +25,7 @@ int main() {
 
             else {
                 if (count1) {
-                    if (txt[i] >= 'a' && txt[i] <= 'z') txt[i] -= 32;
+                    if (txt[j] >= 'a' && txt[j] <= 'z') txt[j] -= 32;
 
                     count1 = 0;
                     count2 = 1;
@@ -36,16 +33,15 @@ int main() {
                 }
             }
             if (count2) {
-                if (txt[i] >= 'A' && txt[i] <= 'Z') txt[i] += 32;
+                if (txt[j] >= 'A' && txt[j] <= 'Z') txt[j] += 32;
 
                 count1 = 1;
                 count2 = 0;
                 continue;
             }
         }
+        printf("%s\n", txt);
     }
-
-    printf("%s\n", txt);
 
     return 0;
 }
